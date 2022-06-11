@@ -1,0 +1,126 @@
+body {
+    margin: unset;
+    font-family: 'Roboto', sans-serif;
+    overflow-y: hidden;
+}
+
+@font-face {
+    font-family: 'Roboto', sans-serif;;
+    src: url(fonts.googleapis.com/css2?family=Roboto);
+}
+
+header, footer {
+    background-color: #000;
+}
+
+main {
+    overflow-y: auto;
+}
+
+footer {
+    height: 2.5vh;
+}
+
+.header__logo--svg {
+    display: block;
+    max-width: 100%;
+    fill: #fff;
+}
+
+svg {
+    margin: 15px 0 13px 20px;
+}
+
+p {
+    margin: unset;
+}
+
+.row {
+    display: flex;
+}
+
+.username {
+    margin: 33px 25px 25px 0;
+    color: #fff;
+    font-weight: 700;
+}
+
+.gray-bg {
+    width: 3vw; 
+    height: 100%;
+    background-color: #f4f4f4;
+}
+
+.white-bg {
+    width: 97vw; 
+    height: 85.7vh;
+    padding: 3.5vh 0 0 2vw;
+    background-color: #fff;
+}
+
+.col-logo {
+    width: 50vw;
+}
+
+.col-name {
+    direction: rtl;
+    width: 50vw;
+}
+
+.text {
+    color: #212121;
+    font-weight: 700;
+    font-size: xx-large;
+}
+
+.sub-text {
+    padding: 1vh 0 0 0;
+    color: #212121;
+    font-weight: 500;
+    font-size: large;
+}
+
+.divider-one {
+    margin: 2.5vh 2vw 0 0;
+    border: 0;
+    border-top: 1px solid #bdbdbd
+}
+
+.text-95 { /* mudar nome dessa classe antes de entregar */
+    margin: 2vh 0 0 0;
+    color: #666666;
+    font-weight: 700;
+    font-size: small;
+}
+
+.divider-two {
+    margin: 2vh 2vw 1.5vh 0;
+    border: 0;
+    border-top: 1px solid #bdbdbd
+}
+
+.text-99 { /* mudar nome dessa classe antes de entregar */
+    color: #212121;
+    font-weight: 700;
+    font-size: small;
+}
+
+.divider-three {
+    margin: 1.5vh 2vw 1.5vh 0;
+    border: 0;
+    border-top: 1px solid #bdbdbd
+}
+
+.frame {
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+.media-body {
+    margin: 0 30vw 0 1vw;
+}
+
+/* .material-symbols-outlined {
+    font-weight: unset;
+    margin: -4px 0 0 15px;
+} */
