@@ -40,10 +40,12 @@
                             </svg>
                         </div>
                         <div class="col-name">
-                            <p class="username" ng-controller="PokeAppController as pokeSearch">
-                                <span class="material-symbols-outlined">arrow_drop_down</span>
-                                {{pokeSearch.callUser()}}
-                            </p>
+                            <div class="row">
+                                <span class="material-symbols-outlined arrow">arrow_drop_down</span>
+                                <p class="username" ng-controller="PokeAppController as pokeSearch">
+                                    {{pokeSearch.callUser()}}
+                                </p>
+                            /div>
                         </div>
                     </div>  
                 </div>                    
@@ -56,37 +58,41 @@
                     <div class="gray-bg"></div>
                     <div class="white-bg" ng-controller="PokeAppController as pokeSearch">
                         <p class="text">Fase teste Prático de Front_end</p>
+                        <form>
+                            <input type="text" ng-model="pokeSearch.todoText"  size="30" placeholder="add new todo here">
+                        </form>
                         <p class="sub-text">Pokebusca</p>
                         <hr class="divider-one">
-                        <p class="text-95">{{pokeSearch.numbersHandler()}}</p>
+                        <p class="exhibition-text">{{pokeSearch.numbersHandler()}}</p>
                         <hr class="divider-two">
                         <div class="container" ng-repeat="id in pokeSearch.namesAndImages">
                             <div class="row">
                                 <img class="align-self-start frame" ng-src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{id.url}}.png" alt="Generic placeholder image">
                                 <div class="media-body">
-                                    <p class="text-99">{{id.name}}</p>
-                                    <p class="desciption">Características do pokemon dolor sit amet, consectetur adipiscing elit. In ultricies nunc at odio tempor tincidunt. 
+                                    <p class="pokename">{{id.name}} #{{id.url}}</p>
+                                    <p class="description">Características do pokemon dolor sit amet, consectetur adipiscing elit. In ultricies nunc at odio tempor tincidunt. 
                                         Sed sit amet dolor velit. Donec convalis tellus porta molestie. Suspendisse condimentum et dui in aliquam.
                                     </p>
                                 </div>
                             </div>
                             <hr class="divider-three">
                         </div>
-                        <!-- <hr class="divider-three"> -->
-                        <span>{{pokeSearch.remaining()}} of {{pokeSearch.todos.length}} remaining</span>
-                        [ <a href="" ng-click="pokeSearch.archive()">archive</a> ]
-                        <ul class="unstyled">
-                            <li ng-repeat="todo in pokeSearch.todos">
-                                <label class="checkbox">
-                                    <input type="checkbox" ng-model="todo.done">
-                                    <span class="done-{{todo.done}}">{{todo.text}}</span>
-                                </label>
-                            </li>
-                        </ul>
-                        <form ng-click="getData()">
-                            <input type="text" ng-model="pokeSearch.todoText"  size="30" placeholder="add new todo here">
-                            <input class="btn-primary" type="submit" value="add">
-                        </form>
+    
+                        <div class="row paginator">
+                            <span ng-click="getData(1120)" ng-class="{'disable-mock': page === 1120}" class="material-symbols-outlined page">
+                                last_page
+                            </span>
+                            <span ng-click="getData(+20)" ng-class="{'disable-mock': page === 1120}" class="material-symbols-outlined page">
+                                chevron_right
+                            </span>
+                            <span ng-click="getData(-20)" ng-class="{'disable-mock': page === 0}" class="material-symbols-outlined page">
+                                chevron_left 
+                            </span>
+                            <span ng-click="getData(0)" ng-class="{'disable-mock': page === 0 }" class="material-symbols-outlined page">
+                                first_page
+                            </span>
+                            <span class="footer-text">{{pokeSearch.pagenumbersHandler()}}</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -95,7 +101,7 @@
         <footer>
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-4"></div>
+                    <div class="col"></div>
                 </div>
             </div>
         </footer>

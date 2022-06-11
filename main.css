@@ -28,7 +28,7 @@ footer {
 }
 
 svg {
-    margin: 15px 0 13px 20px;
+    margin: 15px 0 13px 20px; /* consertar essa margem aqui */
 }
 
 p {
@@ -40,15 +40,21 @@ p {
 }
 
 .username {
-    margin: 33px 25px 25px 0;
+    margin: 3.5vh 1vw 3vh 1vw;
     color: #fff;
     font-weight: 700;
 }
 
+.arrow {
+    color: #fff;
+    margin: 3vh 1.5vw 3vh 0vw;
+}
+
 .gray-bg {
     width: 3vw; 
-    height: 100%;
-    background-color: #f4f4f4;
+    height: 100%; /* consertar essa propriedade aqui */
+    /* background-color: #f4f4f4; */
+    background-color: blue;
 }
 
 .white-bg {
@@ -86,7 +92,7 @@ p {
     border-top: 1px solid #bdbdbd
 }
 
-.text-95 { /* mudar nome dessa classe antes de entregar */
+.exhibition-text { 
     margin: 2vh 0 0 0;
     color: #666666;
     font-weight: 700;
@@ -99,10 +105,18 @@ p {
     border-top: 1px solid #bdbdbd
 }
 
-.text-99 { /* mudar nome dessa classe antes de entregar */
+.pokename { 
     color: #212121;
     font-weight: 700;
+    font-size: medium;
+    line-height: 1.7;
+}
+
+.description {
+    color: #565656;
+    font-weight: 700;
     font-size: small;
+    line-height: 1.9;
 }
 
 .divider-three {
@@ -114,13 +128,33 @@ p {
 .frame {
     border: 1px solid #000;
     border-radius: 5px;
+    max-width: 96px;
+    max-height: 96px;
 }
 
 .media-body {
-    margin: 0 30vw 0 1vw;
+    margin: 0 27vw 0 1.1vw;
 }
 
-/* .material-symbols-outlined {
-    font-weight: unset;
-    margin: -4px 0 0 15px;
-} */
+.footer-text {
+    direction: ltr;
+    margin: 0.3vh 1vw 0 0;
+}
+
+.page {
+    cursor: pointer;
+    padding: 0 0 0 1vw;
+}
+
+.paginator {
+    padding: 1vh 2vw 2vh 0;
+    direction: rtl;
+    color: #666666;
+    font-weight: 700;
+    font-size: small;
+}
+
+.disable-mock {
+    cursor: not-allowed;
+    opacity: 0.6;
+}

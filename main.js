@@ -2,17 +2,38 @@ angular.module('pokeApp', [])
   .controller('PokeAppController', function($scope, $http) {
     var pokeSearch = this;
     pokeSearch.namesAndImages = [];
+    var pageArray = []; 
  
-    $scope.getData = function() {
+    $scope.getData = function(pageNum) {
+
+        $scope.page = 0; 
+
+        if (pageNum === 0 || pageNum === 1120) {
+            $scope.page = parseInt(pageNum);
+            pageArray.push(parseInt(pageNum));
+        } else {
+            $scope.page = (pageArray[pageArray.length - 1] + parseInt(pageNum));
+            pageArray.push(parseInt($scope.page));
+        }
+
+        if (pageArray.length > 2) {
+            pageArray.shift();
+        }
+        console.log($scope.page); // retirar os logs no último commit
+
+        console.log(pageArray);
 		$scope.loading = true;
-		$http.get("https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20")
+
+		$http.get('https://pokeapi.co/api/v2/pokemon/?offset=' + $scope.page + '&limit=20')
 		.then(function(response) { 
             $scope.aux = response.data;
-            $scope.total = response.data.count - 228;
+            $scope.total = response.data.count;
             $scope.shown =  response.data.results.length;
 			$scope.details = response.data.results;
 
             $scope.loading = false;
+            
+            pokeSearch.namesAndImages = [];
 
             $scope.details.forEach(function (x) {
                 x.name = x.name.charAt(0).toUpperCase() + x.name.slice(1);
@@ -20,7 +41,7 @@ angular.module('pokeApp', [])
                 pokeSearch.namesAndImages.push({name: x.name, url: x.url});
             });
              
-            // console.log(pokeSearch.namesAndImages);
+            console.log($scope.aux);
 		});
 	}	
 
@@ -30,11 +51,11 @@ angular.module('pokeApp', [])
         return user;
     };
 
-    // pokeSearch.numbersHandler = function() {
-    //     var pokePhtos = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/';
-    //     pokePhtos =  pokePhtos + $scope.shown  + 
-    //     return pokeShown;
-    // };
+    pokeSearch.pagenumbersHandler = function() {
+        var pokePage = 0;  
+        pokePage = parseInt((pageArray[pageArray.length - 1] + 20)/20) + ' de 57 páginas';
+        return pokePage;
+    };
 
     pokeSearch.numbersHandler = function() {
         var pokeShown = '';
@@ -42,5 +63,5 @@ angular.module('pokeApp', [])
         return pokeShown;
     };
 
-    $scope.getData();
+    $scope.getData(0);
 });
