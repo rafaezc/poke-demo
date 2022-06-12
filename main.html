@@ -77,7 +77,7 @@
                         <p class="exhibition-text">{{pokeSearch.numbersHandler()}}</p>
                         <hr class="divider-two">
                         <div class="container" ng-click="path = 'shiny/'" ng-init="path = ''" ng-repeat="id in pokeSearch.namesAndImages">
-                            <div class="row">
+                            <div class="row cursor-mod">
                                 <img class="align-self-start frame" ng-src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{path}}{{id.url}}.png" alt="Generic placeholder image">
                                 <div class="media-body">
                                     <p class="pokename">{{id.name}} #{{id.url}}</p>

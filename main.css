@@ -141,6 +141,10 @@ p {
     border-top: 1px solid #bdbdbd
 }
 
+.cursor-mod {
+    cursor: pointer;
+}
+
 .frame {
     border: 1px solid #000;
     border-radius: 5px;
