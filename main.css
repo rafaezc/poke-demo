@@ -51,10 +51,9 @@ p {
 }
 
 .gray-bg {
-    width: 3vw; 
-    height: 100%; /* consertar essa propriedade aqui */
-    /* background-color: #f4f4f4; */
-    background-color: blue;
+    width: 3.3vw; 
+    height: 89.7vh; 
+    background-color: #f4f4f4;
 }
 
 .white-bg {
@@ -77,6 +76,23 @@ p {
     color: #212121;
     font-weight: 700;
     font-size: xx-large;
+}
+
+.col-t {
+    width: 45vw;
+}
+
+.col-search {
+    direction: rtl;
+    width: 47vw;
+}
+
+.search-box {
+    height: 3vh;
+    direction: ltr;
+    color: #707070;
+    font-weight: 500;
+    font-size: small;
 }
 
 .sub-text {

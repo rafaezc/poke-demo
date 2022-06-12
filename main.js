@@ -1,4 +1,4 @@
-angular.module('pokeApp', [])
+angular.module('pokeApp', []) // CRIAR O README E MEDIA QUERIES RESPONSIVIDADE
   .controller('PokeAppController', function($scope, $http) {
     var pokeSearch = this;
     pokeSearch.namesAndImages = [];
@@ -19,9 +19,7 @@ angular.module('pokeApp', [])
         if (pageArray.length > 2) {
             pageArray.shift();
         }
-        console.log($scope.page); // retirar os logs no último commit
 
-        console.log(pageArray);
 		$scope.loading = true;
 
 		$http.get('https://pokeapi.co/api/v2/pokemon/?offset=' + $scope.page + '&limit=20')
@@ -41,7 +39,6 @@ angular.module('pokeApp', [])
                 pokeSearch.namesAndImages.push({name: x.name, url: x.url});
             });
              
-            console.log($scope.aux);
 		});
 	}	
 
